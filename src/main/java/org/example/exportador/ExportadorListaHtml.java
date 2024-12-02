@@ -6,12 +6,12 @@ public class ExportadorListaHtml extends AbstractExportadorListaProduto {
 
     @Override
     public String abrirTabela() {
-        return "<table>";
+        return "<table>\n";
     }
 
     @Override
     public String fecharTabela() {
-        return "</table>";
+        return "</table>\n";
     }
 
     @Override
@@ -21,17 +21,17 @@ public class ExportadorListaHtml extends AbstractExportadorListaProduto {
 
     @Override
     public String fecharLinha() {
-        return "</tr>";
+        return "</tr>\n";
     }
 
     @Override
     public String abrirLinhaTitulos() {
-        return "<thead><tr>";
+        return "<thead><tr>\n";
     }
 
     @Override
     public String fecharLinhaTitulos() {
-        return "</tr></thead>";
+        return "</tr></thead>\n";
     }
 
     @Override
@@ -44,8 +44,4 @@ public class ExportadorListaHtml extends AbstractExportadorListaProduto {
         return "</td>";
     }
 
-    @Override
-    public String exportar(List<Produto> listaProdutos) {
-        return null;
-    }
 }

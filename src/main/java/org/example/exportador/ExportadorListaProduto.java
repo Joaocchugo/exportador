@@ -12,7 +12,7 @@ public interface ExportadorListaProduto {
     String fecharLinhaTitulos();
     String abrirColuna(Object valor);
     String fecharColuna();
-    String exportar(List<Produto> listaProdutos);
+    String exportar(List<Produto> produtos);
 
     static ExportadorListaProduto newInstance() {
         // Sempre que não houver especificação ele retornará o documento em Html

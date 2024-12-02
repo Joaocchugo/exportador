@@ -7,7 +7,7 @@ public abstract class AbstractExportadorListaProduto implements ExportadorListaP
             List.of("ID", "Descrição", "Modelo", "Preço");
 
     @Override
-    public String exportar(List<Produto> listaProdutos) {
+    public String exportar(List<Produto> produtos) {
         var builder = new StringBuilder();
         builder.append(abrirTabela());
 
@@ -20,11 +20,12 @@ public abstract class AbstractExportadorListaProduto implements ExportadorListaP
         builder.append(fecharLinha());
         builder.append(fecharLinhaTitulos());
 
-        for (Produto prod : listaProdutos){
+        for (Produto prod : produtos){
             builder.append(abrirLinha());
-            builder.append(abrirColuna(prod.getId()));
-
-
+            builder.append(abrirColuna(prod.getId())).append(fecharColuna());
+            builder.append(abrirColuna(prod.getDescricao())).append(fecharColuna());
+            builder.append(abrirColuna(prod.getModelo())).append(fecharColuna());
+            builder.append(abrirColuna(prod.getPreco())).append(fecharColuna());
             builder.append(fecharLinha());
         }
 

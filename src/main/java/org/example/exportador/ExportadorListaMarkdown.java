@@ -49,9 +49,5 @@ public class ExportadorListaMarkdown extends AbstractExportadorListaProduto {
         return "";
     }
 
-    @Override
-    public String exportar(List<Produto> listaProdutos) {
-            return null;
-    }
 }
 
